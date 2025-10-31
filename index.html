@@ -19,7 +19,7 @@
 <body>
 
   <!-- Display the map and title with HTML division tags  -->
-  <div id="map-title">Coffee Shops in Raleigh</div>
+  <div id="map-title"><b>Coffee Shops in Raleigh</b></div>
   <div id="map"></div>
 
   <!-- Create the interactive map content with JavaScript (.js) -->
@@ -33,19 +33,26 @@
   });
 
   /* display basemap tiles -- see others at https://leaflet-extras.github.io/leaflet-providers/preview/ */
+
   L.tileLayer(
-    'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    'https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
+	    attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
+	maxZoom: 16
+}).addTo(map);
+
+/*  L.tileLayer(
+    'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
       attribution: '&copy; <a href="https://osm.org/copyright">\
         OpenStreetMap</a> contributors, &copy;\
         <a href="https://carto.com/attribution">CARTO</a>'
-  }).addTo(map);
+  }).addTo(map); */
 
   /* Display a point marker with pop-up text */
-  L.marker([35.8088078,-78.6578201]).addTo(map) // EDIT marker coordinates
+  L.marker([35.8088078,-78.6601161]).addTo(map) // EDIT marker coordinates
   .bindPopup("Idle Hour Coffee Roasters"); // EDIT pop-up text message
 
   /* Display a point marker with pop-up text */
-  L.marker([35.7899785,-78.6862003]).addTo(map) // EDIT marker coordinates
+  L.marker([35.7899785,-78.6774456]).addTo(map) // EDIT marker coordinates
   .bindPopup("Cup A Joe"); // EDIT pop-up text message
 
   /* Display a point marker with pop-up text */
